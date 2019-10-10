@@ -26,7 +26,7 @@ yargs.command({
   command: "remove",
   describe: "Removing a note",
   builder: {
-    title:{
+    title: {
       describe: "Note title",
       demandOption: true,
       type: "string"
@@ -40,8 +40,15 @@ yargs.command({
 yargs.command({
   command: "read",
   describe: "Reading a note",
+  builder: {
+    title: {
+      describe: "Note title",
+      demandOption: true,
+      type: "string"
+    }
+  },
   handler: function(argv) {
-    console.log(chalk.blue.inverse.bold("Reading a note"), argv);
+    notes.readNote(argv.title);
   }
 });
 
