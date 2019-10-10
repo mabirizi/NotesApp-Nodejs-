@@ -34,14 +34,17 @@ const removeNote = title => {
   }
 };
 
-
-const readNote = (title) => {
+const readNote = title => {
   const notes = loadNotes();
   const findNote = notes.find(note => note.title === title);
 
   if (findNote) {
-    
-    console.log("Note added"+ chalk.blue.inverse(findNote.title)+"  Note Body:" + chalk.blue.inverse(findNote.body));
+    console.log(
+      "Note added" +
+        chalk.blue.inverse(findNote.title) +
+        "  Note Body:" +
+        chalk.blue.inverse(findNote.body)
+    );
   } else {
     console.log(chalk.red.inverse("No Note found"));
   }
